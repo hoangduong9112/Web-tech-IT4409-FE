@@ -1,16 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import './index.css';
-
+import { Navbar } from './components/Navbar';
+import { ROUTES } from './application/constants';
+import { withAuthentication } from './auth/auth-hoc';
+import { AuthUserContext } from './auth/auth-user-context';
+import { SignUpPage } from './pages/SignUpPage';
+import { SignInPage } from './pages/SignInPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 export const Content = withAuthentication(() => (
     <Router>
         <>
-           
+            <AuthUserContext.Consumer>
+                {(authUser) => authUser && <Navbar />}
+            </AuthUserContext.Consumer>
+
             <div className="h-full">
                 <Switch>
                     <Redirect exact from="/" to="/boards" />
-                   
+                    <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
+                    <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+                    <Route component={NotFoundPage} />
                 </Switch>
             </div>
         </>
