@@ -1,6 +1,6 @@
 # Introduction
 
-This is a list-making application.
+This is a task-managing application.
 
 ## Main Technology
 
