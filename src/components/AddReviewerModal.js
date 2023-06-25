@@ -6,7 +6,7 @@ const AddReviewerModal = ({ visible, closeModal }) => {
         <Modal
             visible={visible}
             onCancel={closeModal}
-            title="Add reviewer for the conference"
+            title="Add admin for the workspace"
         ></Modal>
     );
 };

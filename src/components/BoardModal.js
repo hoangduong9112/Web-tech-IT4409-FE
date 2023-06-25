@@ -25,19 +25,19 @@ export const BoardModal = (props) => {
             {
                 id: uuid(),
                 currentPage: 1,
-                title: 'Paper submitted for conference',
+                title: 'To Do',
                 cards: [],
             },
             {
                 id: uuid(),
                 currentPage: 1,
-                title: 'Reject',
+                title: 'Doing',
                 cards: [],
             },
             {
                 id: uuid(),
                 currentPage: 1,
-                title: 'Accept',
+                title: 'Done',
                 cards: [],
             },
         ],
@@ -134,7 +134,7 @@ export const BoardModal = (props) => {
         //     className={!visible && 'hidden'}
         // >
         <Modal
-            title={type === ConferenceFormType.CREATE ? 'Add new conference' : 'Update conference'}
+            title={type === ConferenceFormType.CREATE ? 'Add new workspace' : 'Update workspace'}
             width="1300px"
             visible={visible}
             onCancel={closeModal}
@@ -162,7 +162,7 @@ export const BoardModal = (props) => {
                     </div>
                 </div>
 
-                <div className="flex justify-between gap-5">
+                {/* <div className="flex justify-between gap-5">
                     <div className="mb-5 w-1/2">
                         <label htmlFor="timeOccur">Time occur</label>
                         <DatePicker
@@ -219,7 +219,7 @@ export const BoardModal = (props) => {
                             placeholder="Join target"
                         />
                     </div>
-                </div>
+                </div> */}
 
                 <div className="container mt-5 mb-5">
                     <MDEditor value={postMd} onChange={handlePostMdChange} />

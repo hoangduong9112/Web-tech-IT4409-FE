@@ -96,7 +96,7 @@ export const BoardsPage = withAuthorization((authUser) => !!authUser)(() => {
             </div> */}
 
             <div className="flex mb-3 items-center text-xl">
-                <UserOutlined className={`mr-2`} /> Personal Conference Management
+                <UserOutlined className={`mr-2`} /> Personal Workspace Management
             </div>
 
             <div className="grid grid-cols-4 gap-4">
@@ -112,7 +112,7 @@ export const BoardsPage = withAuthorization((authUser) => !!authUser)(() => {
                     />
                 ))}
                 <BoardTitle
-                    title="Add new conference"
+                    title="Add new workspace"
                     addition={true}
                     handleBoardClick={() => setModalVisible(true)}
                 />

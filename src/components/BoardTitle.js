@@ -73,7 +73,7 @@ export const BoardTitle = ({
                         type="primary"
                         style={{ background: 'rgb(217 119 6)' }}
                     >
-                        Update conference
+                        Update workspace
                     </Button>
                     <Button
                         className="rounded-md font-bold"
@@ -84,7 +84,7 @@ export const BoardTitle = ({
                         style={{ background: 'rgb(16 185 129)' }}
                         type="primary"
                     >
-                        Add reviewer
+                        Add admin
                     </Button>
                     <div className="flex gap-2">
                         <div

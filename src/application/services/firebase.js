@@ -1,17 +1,18 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
-import { getDatabase } from 'firebase/database';
 
-const config = {
-    apiKey: 'AIzaSyCFDtilLLCLJ2SKTC6U1gavJsMnYUlg7Us',
-    authDomain: 'learn-fb-a116f.firebaseapp.com',
-    projectId: 'learn-fb-a116f',
-    storageBucket: 'learn-fb-a116f.appspot.com',
-    messagingSenderId: '920113807228',
-    appId: '1:920113807228:web:f2ef6ed3dfe39913e4aef9',
-    measurementId: 'G-MLP04WT8X1',
-    databaseURL: 'https://learn-fb-a116f-default-rtdb.asia-southeast1.firebasedatabase.app',
+const config = { 
+  apiKey: "AIzaSyDN_rh8eo9_WrbrobusGul_dFpKwH4inoI",
+  authDomain: "trello-aebef.firebaseapp.com",
+  projectId: "trello-aebef",
+  storageBucket: "trello-aebef.appspot.com",
+  messagingSenderId: "320919593867",
+  appId: "1:320919593867:web:560210fd9c8e019a95858e",
+  measurementId: "G-2357KWRGKY",
+  databaseURL: 'https://trello-aebef-default-rtdb.asia-southeast1.firebasedatabase.app',
+  
+
 };
 
 const app = firebase.initializeApp(config);
