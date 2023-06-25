@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import { Button, Form, Input } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { auth, provider } from '../application/services/firebase';
 import { actionTypes } from '../auth/reducer';
@@ -21,6 +21,7 @@ const SignInForm = () => {
         try {
             setLoading(true);
             const result = await auth.signInWithPopup(provider);
+            console.log('result', result);
             dispatch({
                 type: actionTypes.SET_USER,
                 user: result.user,
@@ -92,7 +93,8 @@ const SignInForm = () => {
             </Form>
         </div>
     );
-}
+};
+
 export const SignInPage = ({ history }) => (
     <div className={`flex h-full`}>
         <div className={`w-64 m-auto`}>
