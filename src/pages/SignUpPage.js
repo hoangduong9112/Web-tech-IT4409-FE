@@ -1,12 +1,11 @@
-import {useHistory, withRouter } from 'react-router-dom';
-import React, { useState } from 'react';
 import { Button, Form, Input } from 'antd';
+import React, { useState } from 'react';
+import { useHistory, withRouter } from 'react-router-dom';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { createUser, createUserWithEmailAndPassword } from '../application/services/auth';
 import { ROUTES } from '../application/constants';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-
-const SignUpForm =  ({ onSubmit })  => {
+const SignUpForm = ({ onSubmit }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
@@ -61,7 +60,8 @@ const SignUpForm =  ({ onSubmit })  => {
             </Form>
         </div>
     );
-}
+};
+
 export const SignUpPage = withRouter(() => {
     const history = useHistory();
 
@@ -70,6 +70,7 @@ export const SignUpPage = withRouter(() => {
         await createUser(authUser.user.uid, username, email);
         history.push(ROUTES.BOARDS);
     };
+
     return (
         <div className={`flex h-full`}>
             <div className={`w-64 m-auto`}>
