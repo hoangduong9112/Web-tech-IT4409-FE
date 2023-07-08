@@ -31,7 +31,7 @@ export const BoardsPage = withAuthorization((authUser) => !!authUser)(() => {
             }
             setBoards(
                 objectToArray(snapshot.val() || {}).filter(
-                    (conference) => conference.organizer.id === user.uid
+                    (conference) => conference.organizer.id === user?.uid
                 )
             );
             setLoading(false);

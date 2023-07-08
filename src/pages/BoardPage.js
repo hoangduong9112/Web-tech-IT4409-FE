@@ -50,6 +50,22 @@ export const BoardPage = withRouter(
             });
         };
 
+        const deleteCard = async (cardId) => {
+            await boardService.updateBoard(boardId(), {
+                ...board,
+                lanes: board.lanes.map((laneItem) => {
+                    if (laneItem.id !== activeLane.id) return laneItem;
+                    else {
+                        return {
+                            ...laneItem,
+                            cards: laneItem.cards.filter((cardItem) => cardItem?.id !== cardId)
+                        }
+                    }
+                })
+            });
+            await fetchBoard();
+        }
+
         // Fill empty properties that are important for Board component
         const prepareBoard = (board) => ({
             ...board,
@@ -103,6 +119,7 @@ export const BoardPage = withRouter(
                     card={activeCard}
                     addComment={addComment}
                     key={activeCard?.id}
+                    deleteSelf={deleteCard}
                 />
             </>
         );
